@@ -1,0 +1,26 @@
+ON FMP
+-dupliquer padu en padu2
+-supprimer padu
+-renommer padu2 en padu
+
+-créer champ uid Texte Indexé, Contrôle systématique, Unique
+-créer champ lastModifiedDate Horodatage Date et heure de modification
+-créer champ adresses_de_concat_ro Calcul/Texte :
+ObtenirRepetition ( adresses de; 1)
+& Si(ObtenirRepetition ( adresses de; 2)  ≠ ""; "," & ObtenirRepetition ( adresses de; 2); "")
+& Si(ObtenirRepetition ( adresses de; 3)  ≠ ""; "," & ObtenirRepetition ( adresses de; 3); "")
+& Si(ObtenirRepetition ( adresses de; 4)  ≠ ""; "," & ObtenirRepetition ( adresses de; 4); "")
+& Si(ObtenirRepetition ( adresses de; 5)  ≠ ""; "," & ObtenirRepetition ( adresses de; 5); "")
+& Si(ObtenirRepetition ( adresses de; 6)  ≠ ""; "," & ObtenirRepetition ( adresses de; 6); "")
+& Si(ObtenirRepetition ( adresses de; 7)  ≠ ""; "," & ObtenirRepetition ( adresses de; 7); "")
+& Si(ObtenirRepetition ( adresses de; 8)  ≠ ""; "," & ObtenirRepetition ( adresses de; 8); "")
+-Définir comptes et privilèges > utilisateur itesync/itesync [Accès Intégral]
+-Partage JDBC > Spécifier utilisateur itesync
+-UPDATE "BD relations" SET lastModifiedDate = 2014-10-23
+-keytool -import -alias RapidSSL_CA_bundle -file RapidSSL_CA_bundle.crt  -keystore "c:\Program Files\Java\jdk1.7.0_51\jre\lib\security\cacerts"
+
+keytool -import -alias RapidSSL_CA_bundle -file RapidSSL_CA_bundle.crt  -keystore "c:\Program Files\Java\jre7\lib\security\cacerts"
+password: changeit
+IN JAVA
+Contacts à double ?
+
